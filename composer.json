@@ -1,7 +1,7 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "Laravel Zero provides the perfect starting point for your next Laravel Console Application.",
-    "keywords": ["framework", "laravel", "console", "zero"],
+    "name": "yoeunes/membership",
+    "description": "Applicaton to create membership cards.",
+    "keywords": ["membership", "yoeunes", "yoeunes", "khoubza", "association"],
     "license": "MIT",
     "support": {
         "issues": "https://github.com/laravel-zero/laravel-zero/issues",
@@ -9,8 +9,8 @@
     },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Younes Khoubza",
+            "email": "younes.khoubza@gmail.com"
         }
     ],
     "require": {
