@@ -15,6 +15,7 @@
     ],
     "require": {
         "php": ">=7.1",
+        "alt-three/bus": "^3.0",
         "laravel-zero/framework": "^3.9.2",
         "maatwebsite/excel": "^2.1",
         "nunomaduro/collision": "^1.1"

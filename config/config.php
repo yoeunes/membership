@@ -27,7 +27,7 @@ return [
          * line, the list of commands will appear. The rest of the
          * application commands will be auto-detected.
          */
-        'default-command' => App\Commands\HelloCommand::class,
+        'default-command' => App\Commands\MembershipCommand::class,
 
         /*
          * Here goes the application list of Laravel Service Providers.
@@ -35,6 +35,7 @@ return [
          */
         'providers' => [
             App\Providers\AppServiceProvider::class,
+            AltThree\Bus\BusServiceProvider::class,
             Maatwebsite\Excel\ExcelServiceProvider::class,
         ],
     ],
