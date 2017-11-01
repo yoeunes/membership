@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d72de23acfc94ecbe26d186c16edc75",
+    "content-hash": "6fc73c57b4c1a52e18c0864fab967f08",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -522,16 +522,16 @@
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v3.9.2",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "7388a2da69f13732b98f561ed8e06c797118eeda"
+                "reference": "1a504056ca83fc19a161d7052ee8dfa374bfb3ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/7388a2da69f13732b98f561ed8e06c797118eeda",
-                "reference": "7388a2da69f13732b98f561ed8e06c797118eeda",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/1a504056ca83fc19a161d7052ee8dfa374bfb3ef",
+                "reference": "1a504056ca83fc19a161d7052ee8dfa374bfb3ef",
                 "shasum": ""
             },
             "require": {
@@ -578,7 +578,7 @@
                 "laravel",
                 "zero"
             ],
-            "time": "2017-10-26T21:28:03+00:00"
+            "time": "2017-11-01T19:28:03+00:00"
         },
         {
             "name": "mtdowling/cron-expression",
