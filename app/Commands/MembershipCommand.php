@@ -2,24 +2,24 @@
 
 namespace App\Commands;
 
-use Illuminate\Console\Scheduling\Schedule;
 use LaravelZero\Framework\Commands\Command;
+use Maatwebsite\Excel\Collections\RowCollection;
 
-class HelloCommand extends Command
+class MembershipCommand extends Command
 {
     /**
      * The name and signature of the command.
      *
      * @var string
      */
-    protected $signature = 'hello {name=Artisan}';
+    protected $signature = 'run {filename} {folder?}';
 
     /**
      * The description of the command.
      *
      * @var string
      */
-    protected $description = 'The hello app command';
+    protected $description = 'The membership app command';
 
     /**
      * Execute the command. Here goes the code.
@@ -28,22 +28,13 @@ class HelloCommand extends Command
      */
     public function handle(): void
     {
-        $this->info('Love beautiful code? We do too.');
+        if(empty($filename = $this->argument('filename')) || !file_exists($filename)) {
+            $this->error('le fichier ' . $filename . ' n\'existe pas.');
+        }
 
-        $this->notify('Hello '.$this->argument('name'), 'Enjoy the fresh air!');
+        /** @var RowCollection $data */
+        $data = app('excel')->load($filename)->get();
 
-        $this->comment('Wanna see more? Type `php your-app-name list`');
-    }
-
-    /**
-     * Define the command's schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     *
-     * @return void
-     */
-    public function schedule(Schedule $schedule): void
-    {
-        // $schedule->command(static::class)->everyMinute();
+        var_dump($data->toArray());
     }
 }
