@@ -37,7 +37,7 @@ return [
             App\Providers\AppServiceProvider::class,
             AltThree\Bus\BusServiceProvider::class,
             Maatwebsite\Excel\ExcelServiceProvider::class,
-  	    SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+            SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         ],
     ],
 
