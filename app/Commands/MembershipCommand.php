@@ -4,7 +4,8 @@ namespace App\Commands;
 
 use LaravelZero\Framework\Commands\Command;
 use Maatwebsite\Excel\Collections\RowCollection;
-use function print_r;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 class MembershipCommand extends Command
 {
@@ -31,6 +32,7 @@ class MembershipCommand extends Command
     {
         if(empty($filename = $this->argument('filename')) || !file_exists($filename)) {
             $this->error('le fichier ' . $filename . ' n\'existe pas.');
+     return;		
         }
 
         /** @var RowCollection $data */
@@ -39,7 +41,8 @@ class MembershipCommand extends Command
         $bar = $this->output->createProgressBar($data->count());
 
         foreach ($data->toArray() as $member) {
-            print_r($member);
+	    $text = $member['prenom'] . ' ' . $member['nom'] . ' ' . $member['cin'];
+            app('qrcode')->format('png')->size(100)->generate($text, 'output/'.$text.'.png');
             $bar->advance();
         }
 
