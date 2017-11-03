@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use LaravelZero\Framework\Commands\Command;
 use Maatwebsite\Excel\Collections\RowCollection;
+use function print_r;
 
 class MembershipCommand extends Command
 {
@@ -35,6 +36,13 @@ class MembershipCommand extends Command
         /** @var RowCollection $data */
         $data = app('excel')->load($filename)->get();
 
-        var_dump($data->toArray());
+        $bar = $this->output->createProgressBar($data->count());
+
+        foreach ($data->toArray() as $member) {
+            print_r($member);
+            $bar->advance();
+        }
+
+        $bar->finish();
     }
 }
